@@ -1,3 +1,5 @@
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -5,9 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'night-blue': '#0a1929',
-        'card-dark': '#1a2937',
+      animation: {
+        'bounce-slow': 'bounce 3s infinite',
       },
     },
   },

@@ -1,25 +1,53 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-[#0a1929];
-}
-
 .weather-card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.weather-card:hover {
-  transform: translateY(-5px);
+.weather-animation[data-weather="clear"] {
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 0%, transparent 60%);
+  animation: shine 8s linear infinite;
 }
 
-.weather-info {
-  @apply bg-[#0a1929] rounded-lg p-4;
-  transition: all 0.3s ease;
+.weather-animation[data-weather="rain"] {
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  animation: rain 2s linear infinite;
 }
 
-.weather-info:hover {
-  @apply bg-[#1a2937];
+.weather-animation[data-weather="clouds"] {
+  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  animation: clouds 8s ease infinite;
+}
+
+.weather-animation[data-weather="default"] {
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.1), transparent);
+}
+
+@keyframes shine {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rain {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 20px; }
+}
+
+@keyframes clouds {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
 }
