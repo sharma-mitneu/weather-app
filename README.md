@@ -4,7 +4,7 @@ A simple **Next.js** web application that provides real-time weather updates. Us
 
 ## 🚀 Features
 ✅ Get real-time weather updates for any city  
-✅ Responsive and lightweight UI  
+✅ Responsive and lightweight UI   
 ✅ Built with Next.js for fast performance  
 ✅ Uses OpenWeatherMap API for weather data  
 ✅ Deployable on Netlify with CI/CD integration  
